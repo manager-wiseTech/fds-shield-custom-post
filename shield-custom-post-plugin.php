@@ -26,6 +26,26 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 Copyright 2005-2015 Automattic, Inc.
 */
+
+require 'plugin-update-checker-master/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/manager-wiseTech/fds-shield-custom-post/',
+	__FILE__,
+	'fds-shield-custom-post'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('your-token-here');
+
+
+
+
+
+
+
 defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
 // defining a class
 class Shield
